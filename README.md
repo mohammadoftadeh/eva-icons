@@ -94,6 +94,37 @@ Eva Icons are also available as a Web Font.
 
 We recommend using SVG icons due to better rendering and performance capabilities, [more details](https://css-tricks.com/icon-fonts-vs-svg/).
 
+### React.js
+
+```js
+import React, { useEffect } from "react";
+import "./App.css";
+
+import * as eva from "eva-icons";
+
+function App() {
+  useEffect(() => {
+    // add this line
+    eva.replace();
+  }, []);
+  return (
+    <div className="App">
+      <header className="App-header">
+       // add your icon
+        <i
+          data-eva="search"
+          data-eva-animation="pulse"
+          data-eva-hover="false"
+          data-eva-infinite="true"
+        />
+      </header>
+    </div>
+  );
+}
+
+export default App;
+```
+
 ## Documentation
 
 ### `eva.replace(options)`
